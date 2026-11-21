@@ -3,7 +3,7 @@
   "short_name": "河內旅行",
   "start_url": "/travel-guides/hanoi-2026/",
   "display": "standalone",
-  "background_color": "#F6F3EC",
+  "background_color": "#FFFFFF",
   "theme_color": "#0F5257",
   "icons": [
     {
