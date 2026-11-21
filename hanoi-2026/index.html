@@ -648,6 +648,22 @@
       const pill = document.querySelector(`.day-pill[data-day="${target}"]`);
       if (pill) switchDay(target, pill);
     })();
+
+    // On Android, convert Google Maps web URLs to geo: URI so browsers (e.g. Brave) open the native Maps app directly
+    (function enableAndroidMapsApp() {
+      if (/Android/i.test(navigator.userAgent)) {
+        document.querySelectorAll('.map-btn').forEach(btn => {
+          try {
+            const u = new URL(btn.href);
+            const q = u.searchParams.get('query');
+            if (q) {
+              btn.href = 'geo:0,0?q=' + encodeURIComponent(q);
+              btn.removeAttribute('target');
+            }
+          } catch (e) {}
+        });
+      }
+    })();
   </script>
 </body>
 </html>
