@@ -192,6 +192,41 @@
     }
     .map-btn:hover { background: #DBEAFE; }
 
+    /* Backup Restaurants Section */
+    .backup-section {
+      margin-top: 14px;
+      background: #FAF8F4;
+      border: 1px solid #E5E0D5;
+      border-left: 4px solid #D97706;
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .backup-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #92400E;
+      margin-bottom: 8px;
+    }
+    .backup-item {
+      padding: 8px 0;
+      border-bottom: 1px dashed #E5E0D5;
+    }
+    .backup-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .backup-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 2px;
+    }
+    .backup-desc {
+      font-size: 13px;
+      color: #4B5563;
+      margin-bottom: 5px;
+    }
+
     /* Tables */
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
@@ -330,13 +365,26 @@
           </div>
         </div>
         <div class="item">
-          <div class="item-time">中午・下午</div>
-          <div class="item-main">Phở Gà Nguyệt 雞肉河粉 → Loading T Café → 還劍湖＆夜市</div>
-          <div class="item-note">實際造訪：雞河粉、Loading T 蛋咖啡、還劍湖與夜市、晚餐烤肉米線。</div>
+          <div class="item-time">中午・下午・晚餐</div>
+          <div class="item-main">Phở Gà Nguyệt 雞肉河粉 → Loading T Café 蛋咖啡 → 還劍湖＆夜市 → MẸT 1 晚餐</div>
+          <div class="item-note">實際造訪：雞肉河粉、Loading T 蛋咖啡、還劍湖與夜市、晚餐烤肉米線。</div>
           <div class="map-links">
-            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pho+Ga+Nguyet+5B+Phu+Doan+Hoan+Kiem+Hanoi">📍 Phở Gà Nguyệt</a>
-            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Loading+T+Cafe+8+Chan+Cam+Hoan+Kiem+Hanoi">📍 Loading T Café</a>
-            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=MET+Vietnamese+Restaurant+29+Hang+Trong+Hanoi">📍 MẸT 1</a>
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pho+Ga+Nguyet+5B+Phu+Doan+Hoan+Kiem+Hanoi">📍 Phở Gà Nguyệt（雞肉河粉）</a>
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Loading+T+Cafe+8+Chan+Cam+Hoan+Kiem+Hanoi">📍 Loading T Café（蛋咖啡）</a>
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=MET+Vietnamese+Restaurant+29+Hang+Trong+Hanoi">📍 MẸT 1（越式料理）</a>
+          </div>
+          <div class="backup-section">
+            <div class="backup-title">📌 Day 1 備案餐廳／輕食</div>
+            <div class="backup-item">
+              <div class="backup-name">越式法國麵包（Bánh Mì 25）</div>
+              <div class="backup-desc">離飯店步行 4 分鐘，可選豬肉／雞肉／蛋口味（避開牛肉）。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Banh+Mi+25+25+Hang+Ca+Hanoi">📍 Bánh Mì 25（越式法包）</a></div>
+            </div>
+            <div class="backup-item">
+              <div class="backup-name">昇龍薑黃魚（Chả Cá Thăng Long）</div>
+              <div class="backup-desc">桌邊現煎薑黃魚配蒔蘿與米線，不含牛肉。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cha+Ca+Thang+Long+6B+Duong+Thanh+Hanoi">📍 昇龍薑黃魚</a></div>
+            </div>
           </div>
         </div>
       </div>
@@ -386,13 +434,63 @@
           </div>
         </div>
         <div class="item">
-          <div class="item-time">18:00–21:00</div>
-          <div class="item-main">晚餐換口味：<strong>Chả Cá Thăng Long 薑黃魚</strong> 或老城小吃</div>
-          <div class="item-note">備案：飯店旁 <strong>Bún Chả Hàng Bút / 41 Cửa Đông</strong>、<strong>Bánh Gối</strong> 枕頭餅、<strong>Bánh Mì 25</strong>（開到 21:00）、<strong>Tầm Vị</strong>、<strong>Habakuk</strong>。<br><span class="tag tag-amber">行前確認</span> <strong>20:00–21:00 留意 WhatsApp / Klook 通知</strong>隔天夏龍灣集合點！</div>
+          <div class="item-time">18:00–21:00｜主選晚餐</div>
+          <div class="item-main"><strong>昇龍薑黃魚（Chả Cá Thăng Long）</strong> → 回飯店</div>
+          <div class="item-note">桌邊現煎薑黃魚配蒔蘿與米線，不含牛肉，離飯店步行約 8 分鐘。<br><span class="tag tag-amber">行前確認</span> <strong>20:00–21:00 留意 WhatsApp / Klook 通知</strong>隔天夏龍灣集合點！</div>
           <div class="map-links">
-            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cha+Ca+Thang+Long+6B+Duong+Thanh+Hanoi">📍 薑黃魚</a>
-            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Banh+Mi+25+25+Hang+Ca+Hanoi">📍 Bánh Mì 25</a>
-            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+41+Cua+Dong+Hanoi">📍 Bún Chả 41 Cửa Đông</a>
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cha+Ca+Thang+Long+6B+Duong+Thanh+Hanoi">📍 昇龍薑黃魚 (6B Đường Thành)</a>
+          </div>
+
+          <div class="backup-section">
+            <div class="backup-title">📌 Day 2 備案餐廳／在地小吃（分項參考）</div>
+
+            <div class="backup-item">
+              <div class="backup-name">烤豬肉米線－行筆店（Bún Chả Hàng Bút）</div>
+              <div class="backup-desc">飯店推薦在地名店，離飯店步行約 3 分鐘，無牛肉。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+Hang+But+Hoan+Kiem+Hanoi">📍 烤豬肉米線（Hàng Bút 街）</a></div>
+            </div>
+
+            <div class="backup-item">
+              <div class="backup-name">烤豬肉米線－門東 41 號（Bún Chả 41 Cửa Đông）</div>
+              <div class="backup-desc">飯店推薦在地名店，離飯店步行約 3 分鐘，無牛肉。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+41+Cua+Dong+Hanoi">📍 烤豬肉米線（41 Cửa Đông）</a></div>
+            </div>
+
+            <div class="backup-item">
+              <div class="backup-name">越式法國麵包（Bánh Mì 25）</div>
+              <div class="backup-desc">營業至 21:00，離飯店步行約 4 分鐘；可點豬肉／雞肉／煎蛋口味。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Banh+Mi+25+25+Hang+Ca+Hanoi">📍 越式法國麵包（Bánh Mì 25）</a></div>
+            </div>
+
+            <div class="backup-item">
+              <div class="backup-name">炸枕頭餅（Bánh Gối Lý Quốc Sư）</div>
+              <div class="backup-desc">飯店推薦點心，大教堂附近，傳統豬絞肉＋冬粉木耳餡（無牛）。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Banh+Goi+Ly+Quoc+Su+Hoan+Kiem+Hanoi">📍 炸枕頭餅（Lý Quốc Sư）</a></div>
+            </div>
+
+            <div class="backup-item">
+              <div class="backup-name">炸鱔魚冬粉（Miến Lươn Chân Cầm）</div>
+              <div class="backup-desc">飯店推薦老城小吃，大教堂旁，酥炸或滑嫩鱔魚配冬粉（無牛）。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Mien+Luon+Chan+Cam+Hoan+Kiem+Hanoi">📍 炸鱔魚冬粉（Chân Cầm）</a></div>
+            </div>
+
+            <div class="backup-item">
+              <div class="backup-name">蟹肉蒸糯米飯（Xôi Cua Bà Thảo）</div>
+              <div class="backup-desc">飯店推薦傳統小吃，蟹肉蒸糯米飯（無牛）。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Xoi+Cua+Ba+Thao+Hoan+Kiem+Hanoi">📍 蟹肉蒸糯米飯（Xôi Cua Bà Thảo）</a></div>
+            </div>
+
+            <div class="backup-item">
+              <div class="backup-name">尋味北越家常菜（Tầm Vị）</div>
+              <div class="backup-desc">米其林一星復古四合院合菜，建議先確認現場座位與無牛菜色。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Tam+Vi+4B+Yen+The+Hanoi">📍 尋味北越家常菜（Tầm Vị）</a></div>
+            </div>
+
+            <div class="backup-item">
+              <div class="backup-name">哈巴庫克咖啡餐酒（Habakuk Fine Coffee &amp; Bistro）</div>
+              <div class="backup-desc">位於法國區歌劇院旁巷內，提供精品咖啡與自製義大利麵。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Habakuk+Fine+Coffee+Bistro+Phan+Huy+Chu+Hanoi">📍 Habakuk（法國區餐酒）</a></div>
+            </div>
           </div>
         </div>
       </div>
@@ -421,8 +519,24 @@
         </div>
         <div class="item">
           <div class="item-time">17:45–20:45</div>
-          <div class="item-main">搭巴士返回河內（約 20:45 抵達）→ 附近簡單晚餐</div>
-          <div class="item-note"><span class="tag tag-amber">行前確認</span> 晚間留意 Celine SST Travel 通知隔天寧平實際上車時間與地點。</div>
+          <div class="item-main">搭巴士返回河內（約 20:45 抵達）→ 晚餐：<strong>Phở Gà Nguyệt（雞肉河粉）</strong></div>
+          <div class="item-note">雞肉河粉營業至 00:00，團後回城最方便。<br><span class="tag tag-amber">行前確認</span> 晚間留意 Celine SST Travel 通知隔天寧平實際上車時間與地點。</div>
+          <div class="map-links">
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pho+Ga+Nguyet+5B+Phu+Doan+Hoan+Kiem+Hanoi">📍 Phở Gà Nguyệt（雞肉河粉）</a>
+          </div>
+          <div class="backup-section">
+            <div class="backup-title">📌 Day 3 團後晚餐備案（分項參考）</div>
+            <div class="backup-item">
+              <div class="backup-name">烤豬肉米線－門東 41 號（Bún Chả 41 Cửa Đông）</div>
+              <div class="backup-desc">飯店步行 3 分鐘，無牛肉。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+41+Cua+Dong+Hanoi">📍 烤豬肉米線（41 Cửa Đông）</a></div>
+            </div>
+            <div class="backup-item">
+              <div class="backup-name">蟹肉蒸糯米飯（Xôi Cua Bà Thảo）</div>
+              <div class="backup-desc">老城區道地蟹肉糯米飯，無牛肉。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Xoi+Cua+Ba+Thao+Hoan+Kiem+Hanoi">📍 蟹肉蒸糯米飯（Xôi Cua Bà Thảo）</a></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -448,7 +562,23 @@
         <div class="item">
           <div class="item-time">下午・返程</div>
           <div class="item-main"><strong>長安乘竹筏遊船</strong>（穿越石灰岩洞穴）→ 16:30 返回河內</div>
-          <div class="item-note">乘船務必穿妥救生衣；約 19:30–20:00 回到還劍區，整理行李準備早班機。</div>
+          <div class="item-note">乘船務必穿妥救生衣；約 19:30–20:00 回到還劍區，晚餐後整理行李準備早班機。</div>
+          <div class="map-links">
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pho+Ga+Nguyet+5B+Phu+Doan+Hoan+Kiem+Hanoi">📍 主選晚餐：Phở Gà Nguyệt（雞肉河粉）</a>
+          </div>
+          <div class="backup-section">
+            <div class="backup-title">📌 Day 4 團後晚餐備案（分項參考）</div>
+            <div class="backup-item">
+              <div class="backup-name">昇龍薑黃魚（Chả Cá Thăng Long）</div>
+              <div class="backup-desc">營業至 22:00（最晚 21:30 接客），離飯店步行約 8 分鐘，無牛。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cha+Ca+Thang+Long+6B+Duong+Thanh+Hanoi">📍 昇龍薑黃魚</a></div>
+            </div>
+            <div class="backup-item">
+              <div class="backup-name">烤豬肉米線－行筆店（Bún Chả Hàng Bút）</div>
+              <div class="backup-desc">飯店步行 3 分鐘，無牛肉。</div>
+              <div class="map-links"><a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+Hang+But+Hoan+Kiem+Hanoi">📍 烤豬肉米線（Hàng Bút 街）</a></div>
+            </div>
+          </div>
         </div>
       </div>
 
