@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boya 的旅行手冊與回顧</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: #F6F3EC;
+      color: #1F2937;
+      line-height: 1.6;
+      padding: 20px 16px 48px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    header {
+      background: linear-gradient(135deg, #0F5257 0%, #166F75 100%);
+      color: #FFFFFF;
+      border-radius: 18px;
+      padding: 24px 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 20px rgba(15, 82, 87, 0.14);
+    }
+    header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+    header p { font-size: 14px; color: #D1FAE5; }
+    .section-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0F5257;
+      margin-bottom: 12px;
+      padding-left: 4px;
+    }
+    .trip-card {
+      display: block;
+      text-decoration: none;
+      background: #FFFFFF;
+      border: 1px solid #E5E0D5;
+      border-left: 6px solid #0F766E;
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      color: inherit;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .trip-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+    .trip-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: #0F766E;
+      font-weight: 700;
+    }
+    .badge {
+      background: #DCFCE7;
+      color: #166534;
+      padding: 2px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .trip-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 6px;
+    }
+    .trip-desc {
+      font-size: 14px;
+      color: #4B5563;
+    }
+    .trip-cta {
+      margin-top: 10px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #0F5257;
+    }
+    footer {
+      text-align: center;
+      font-size: 12.5px;
+      color: #6B7280;
+      margin-top: 28px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>旅行手冊與回顧</h1>
+    <p>每趟旅程的即時手機指南與旅後紀錄保存庫</p>
+  </header>
+
+  <div class="section-title">旅程列表</div>
+
+  <a class="trip-card" href="./hanoi-2026/">
+    <div class="trip-meta">
+      <span>2026/11/20 (五) ～ 11/24 (二)</span>
+      <span class="badge">進行中</span>
+    </div>
+    <div class="trip-title">河內・夏龍灣・寧平 5 天 4 夜</div>
+    <div class="trip-desc">
+      含每日行程時間軸、Google Maps 一鍵導航、換匯順位、小費／Grab 速查、越盾換算器與不吃牛提示卡。
+    </div>
+    <div class="trip-cta">開啟旅行手冊 →</div>
+  </a>
+
+  <footer>
+    持續更新與保存每趟旅行足跡・不含個人證件與訂位機密資訊
+  </footer>
+</body>
+</html>

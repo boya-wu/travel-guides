@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 河內・夏龍灣・寧平｜手機旅行手冊</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: #F6F3EC;
+      color: #1F2937;
+      line-height: 1.55;
+      padding-bottom: 48px;
+    }
+    .topbar {
+      background: linear-gradient(135deg, #0F5257 0%, #166F75 100%);
+      color: #FFFFFF;
+      padding: 18px 16px 14px;
+    }
+    .topbar-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .back-link {
+      color: #D1FAE5;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .topbar h1 { font-size: 22px; font-weight: 800; line-height: 1.3; }
+    .topbar-sub { font-size: 13px; color: #D1FAE5; margin-top: 4px; }
+
+    /* Sticky Main Tabs */
+    .nav-tabs {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E5E0D5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .nav-tabs-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .nav-btn {
+      background: none;
+      border: none;
+      padding: 12px 4px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #6B7280;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      font-family: inherit;
+    }
+    .nav-btn.active {
+      color: #0F5257;
+      border-bottom-color: #0F766E;
+      background: #FAF8F4;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Day Pills */
+    .day-pills {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .day-pill {
+      flex: 0 0 auto;
+      border: 1px solid #D6D0C4;
+      background: #FFFFFF;
+      color: #374151;
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .day-pill.active {
+      background: #0F766E;
+      color: #FFFFFF;
+      border-color: #0F766E;
+    }
+
+    /* Cards */
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E5E0D5;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #F3EFE6;
+    }
+    .card-title { font-size: 17px; font-weight: 800; color: #0F5257; }
+    .weather-pill {
+      background: #F3EFE6;
+      color: #374151;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* Timeline Items */
+    .item {
+      padding: 11px 0;
+      border-bottom: 1px dashed #ECE7DD;
+    }
+    .item:last-child { border-bottom: none; padding-bottom: 0; }
+    .item-time {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F766E;
+      margin-bottom: 3px;
+    }
+    .item-main {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+    .item-note {
+      font-size: 13.5px;
+      color: #4B5563;
+      margin-bottom: 6px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 5px;
+      font-size: 11.5px;
+      font-weight: 700;
+      vertical-align: middle;
+      margin-left: 4px;
+    }
+    .tag-rose { background: #FFE4E6; color: #9F1239; }
+    .tag-amber { background: #FEF3C7; color: #92400E; }
+    .tag-blue { background: #DBEAFE; color: #1E40AF; }
+    .tag-green { background: #DCFCE7; color: #166534; }
+
+    .map-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+    .map-btn:hover { background: #DBEAFE; }
+
+    /* Tables */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th {
+      text-align: left;
+      background: #FAF8F4;
+      color: #4B5563;
+      padding: 8px;
+      border-bottom: 2px solid #E5E0D5;
+    }
+    td {
+      padding: 8px;
+      border-bottom: 1px solid #F0ECE1;
+      vertical-align: top;
+    }
+    .num { font-weight: 700; color: #0F5257; white-space: nowrap; }
+
+    /* Converter */
+    .conv-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      background: #FAF8F4;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #E5E0D5;
+      margin-bottom: 10px;
+    }
+    .conv-box label { display: block; font-size: 12px; font-weight: 700; color: #4B5563; margin-bottom: 4px; }
+    .conv-box input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #D1D5DB;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    /* No Beef Banner */
+    .no-beef-card {
+      background: #FFF1F2;
+      border: 2px solid #FDA4AF;
+      border-radius: 14px;
+      padding: 18px 16px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .nb-label { font-size: 13px; font-weight: 800; color: #9F1239; margin-bottom: 6px; }
+    .nb-vn { font-size: 24px; font-weight: 900; color: #881337; line-height: 1.3; margin-bottom: 6px; }
+    .nb-sub { font-size: 13.5px; color: #9F1239; }
+
+    .phrase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+    }
+    .phrase-box {
+      background: #FAF8F4;
+      border: 1px solid #E7E2D8;
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .p-zh { font-size: 13.5px; font-weight: 800; color: #111827; }
+    .p-vn { font-size: 16px; font-weight: 800; color: #0F766E; margin: 2px 0; }
+    .p-pron { font-size: 12.5px; color: #6B7280; }
+
+    .list-ul { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+    .list-ul li { padding-left: 14px; position: relative; }
+    .list-ul li::before { content: "•"; position: absolute; left: 0; color: #0F766E; font-weight: 900; }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #6B7280;
+      margin-top: 20px;
+      padding: 0 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="back-link" href="../">← 返回旅行手冊總覽</a>
+      <h1>河內・夏龍灣・寧平 5 天 4 夜</h1>
+      <div class="topbar-sub">2026/11/20 (五) ～ 11/24 (二)｜時間皆為當地時間（慢台灣 1 小時）</div>
+    </div>
+  </div>
+
+  <div class="nav-tabs">
+    <div class="nav-tabs-inner">
+      <button class="nav-btn active" onclick="switchTab('itinerary', this)">每日行程</button>
+      <button class="nav-btn" onclick="switchTab('money', this)">換匯・小費</button>
+      <button class="nav-btn" onclick="switchTab('phrases', this)">避牛・用詞</button>
+      <button class="nav-btn" onclick="switchTab('info', this)">住宿・回顧</button>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- TAB 1: 每日行程 -->
+    <div id="tab-itinerary" class="tab-panel active">
+      <div class="day-pills">
+        <button class="day-pill" data-day="day1" onclick="switchDay('day1', this)">Day 1｜11/20 (五)</button>
+        <button class="day-pill" data-day="day2" onclick="switchDay('day2', this)">Day 2｜11/21 (六)</button>
+        <button class="day-pill" data-day="day3" onclick="switchDay('day3', this)">Day 3｜11/22 (日)</button>
+        <button class="day-pill" data-day="day4" onclick="switchDay('day4', this)">Day 4｜11/23 (一)</button>
+        <button class="day-pill" data-day="day5" onclick="switchDay('day5', this)">Day 5｜11/24 (二)</button>
+      </div>
+
+      <!-- Day 1 -->
+      <div id="day1" class="day-card card" style="display:none;">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Day 1｜抵達河內・換匯與老城美食</div>
+            <div style="font-size:13px; color:#6B7280;">核心動線：接機 → 飯店放行李 → 換匯 → 雞河粉 → 大教堂周邊 → MẸT 1</div>
+          </div>
+          <div class="weather-pill">16–20°C 有小雨</div>
+        </div>
+        <div class="item">
+          <div class="item-time">08:40–10:30</div>
+          <div class="item-main">高雄小港 → 河內內排機場 (CI9587) <span class="tag tag-green">已抵達</span></div>
+          <div class="item-note">國際線戶外 4 號柱 (04 1F) 接機 → 前往飯店寄放行李。</div>
+          <div class="map-links">
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=H+Hotel+L'Art+Hanoi+74+Hang+Ga+Hoan+Kiem+Hanoi">📍 H Hôtel L'Art Hanoi</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-time">放行李後・換匯</div>
+          <div class="item-main">1. Giang Son Gemstone Jewelry <span class="tag tag-amber">主選</span></div>
+          <div class="item-note">備案：2. Hanoi currency、3. Công ty vàng bạc Quốc Trinh。</div>
+          <div class="map-links">
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Giang+Son+Gemstone+Jewelry+Hang+Bac+Hanoi">📍 Giang Son (Hàng Bạc)</a>
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Quoc+Trinh+27+Ha+Trung+Hanoi">📍 Quốc Trinh (Hà Trung)</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-time">中午・下午</div>
+          <div class="item-main">Phở Gà Nguyệt 雞肉河粉 → Loading T Café → 還劍湖＆夜市</div>
+          <div class="item-note">實際造訪：雞河粉、Loading T 蛋咖啡、還劍湖與夜市、晚餐烤肉米線。</div>
+          <div class="map-links">
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Pho+Ga+Nguyet+5B+Phu+Doan+Hoan+Kiem+Hanoi">📍 Phở Gà Nguyệt</a>
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Loading+T+Cafe+8+Chan+Cam+Hoan+Kiem+Hanoi">📍 Loading T Café</a>
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=MET+Vietnamese+Restaurant+29+Hang+Trong+Hanoi">📍 MẸT 1</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div id="day2" class="day-card card" style="display:none;">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Day 2｜皇城・煎餅・法國區・雙層巴士</div>
+            <div style="font-size:13px; color:#6B7280;">今日節奏：飯店早餐 → 昇龍皇城 → 煎餅 → 蛋咖啡 → 監獄 → 歌劇院＆巴士</div>
+          </div>
+          <div class="weather-pill">15–22°C 多雲無雨</div>
+        </div>
+        <div class="item">
+          <div class="item-time">09:00–11:30</div>
+          <div class="item-main">飯店早餐（十點前）→ 搭 Grab 赴 <strong>昇龍皇城</strong>（10:00–11:30）</div>
+          <div class="item-note">看千年端門＋越戰地下指揮地堡 D67。門票 100,000 VND/人，週六開放 08:00–17:00。</div>
+          <div class="map-links">
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Imperial+Citadel+of+Thang+Long+19C+Hoang+Dieu+Hanoi">📍 昇龍皇城 (19C Hoàng Diệu)</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-time">11:45–12:45</div>
+          <div class="item-main"><strong>Mr Bảy Miền Tây 南越煎餅</strong> <span class="tag tag-rose">必去</span></div>
+          <div class="item-note">招牌南部豬肉蝦煎餅（165k）／海鮮煎餅（185k）。<strong>只收現金</strong>，點餐確認醬料與鍋具無牛。</div>
+          <div class="map-links">
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Mr+Bay+Mien+Tay+79+Hang+Dieu+Hoan+Kiem+Hanoi">📍 Mr Bảy (79 Hàng Điếu)</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-time">13:00–14:00</div>
+          <div class="item-main">別家蛋咖啡：<strong>Café Giảng</strong> 或 <strong>Cafe Đinh</strong></div>
+          <div class="item-note">Café Giảng 為 1946 創始老店；Cafe Đinh 為老宅 2 樓陽台看還劍湖。</div>
+          <div class="map-links">
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cafe+Giang+39+Nguyen+Huu+Huan+Hanoi">📍 Café Giảng</a>
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cafe+Dinh+13+Dinh+Tien+Hoang+Hanoi">📍 Cafe Đinh</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-time">14:15–17:45</div>
+          <div class="item-main"><strong>火爐監獄</strong> → <strong>歌劇院街區</strong> → <strong>雙層巴士單圈</strong></div>
+          <div class="item-note">火爐監獄門票 50k/人。之後逛大都會飯店外觀、<strong>Kem Tràng Tiền</strong>（44 Tràng Tiền 分店），並在<strong>河內歌劇院旁八月十九花園售票亭</strong>搭單圈雙層巴士（約 150k/人，50–60 分鐘；或改搭 19:30 夜遊）。</div>
+          <div class="map-links">
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hoa+Lo+Prison+1+Hoa+Lo+Hanoi">📍 火爐監獄</a>
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Hanoi+Opera+House+1+Trang+Tien+Hanoi">📍 河內歌劇院（巴士站）</a>
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Kem+Trang+Tien+44+Trang+Tien+Hanoi">📍 Kem Tràng Tiền (44號)</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-time">18:00–21:00</div>
+          <div class="item-main">晚餐換口味：<strong>Chả Cá Thăng Long 薑黃魚</strong> 或老城小吃</div>
+          <div class="item-note">備案：飯店旁 <strong>Bún Chả Hàng Bút / 41 Cửa Đông</strong>、<strong>Bánh Gối</strong> 枕頭餅、<strong>Bánh Mì 25</strong>（開到 21:00）、<strong>Tầm Vị</strong>、<strong>Habakuk</strong>。<br><span class="tag tag-amber">行前確認</span> <strong>20:00–21:00 留意 WhatsApp / Klook 通知</strong>隔天夏龍灣集合點！</div>
+          <div class="map-links">
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Cha+Ca+Thang+Long+6B+Duong+Thanh+Hanoi">📍 薑黃魚</a>
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Banh+Mi+25+25+Hang+Ca+Hanoi">📍 Bánh Mì 25</a>
+            <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+41+Cua+Dong+Hanoi">📍 Bún Chả 41 Cửa Đông</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div id="day3" class="day-card card" style="display:none;">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Day 3｜夏龍灣一日遊（Cozy Bay 小團）</div>
+            <div style="font-size:13px; color:#6B7280;">豪華禮賓巴士＋船上自助午餐＋英文導遊（已付款）</div>
+          </div>
+          <div class="weather-pill">17–23°C 多雲</div>
+        </div>
+        <div class="item">
+          <div class="item-time">07:10–07:40</div>
+          <div class="item-main">老城區指定點集合上車 <span class="tag tag-amber">Klook 小團</span></div>
+          <div class="item-note">依 11/21 晚間業者通知為準；備防風外套、防滑鞋與可重複使用水壺。</div>
+        </div>
+        <div class="item">
+          <div class="item-time">11:00–16:30</div>
+          <div class="item-main">登船午餐 → <strong>驚訝洞</strong> → <strong>魯恩洞</strong>（竹船／獨木舟）→ <strong>天堂島 Ti Top</strong> → 日落茶點</div>
+          <div class="item-note">竹船／獨木舟已含在團費，不加購快艇。</div>
+        </div>
+        <div class="item">
+          <div class="item-time">17:45–20:45</div>
+          <div class="item-main">搭巴士返回河內（約 20:45 抵達）→ 附近簡單晚餐</div>
+          <div class="item-note"><span class="tag tag-amber">行前確認</span> 晚間留意 Celine SST Travel 通知隔天寧平實際上車時間與地點。</div>
+        </div>
+      </div>
+
+      <!-- Day 4 -->
+      <div id="day4" class="day-card card" style="display:none;">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Day 4｜寧平一日遊（華閭・舞洞・長安）</div>
+            <div style="font-size:13px; color:#6B7280;">豪華 D-Car 小團＋自助午餐＋英文導遊（已付款）</div>
+          </div>
+          <div class="weather-pill">19–27°C 有雲</div>
+        </div>
+        <div class="item">
+          <div class="item-time">07:00 起</div>
+          <div class="item-main">還劍區指定點接送 <span class="tag tag-amber">Klook 小團</span></div>
+          <div class="item-note">洋蔥式穿法、防曬、備飲水。</div>
+        </div>
+        <div class="item">
+          <div class="item-time">上午・中午</div>
+          <div class="item-main"><strong>華閭古都</strong> → <strong>舞洞 / 臥龍山觀景台</strong> → 當地自助午餐</div>
+          <div class="item-note">舞洞階梯較多，請穿防滑鞋量力而行；午餐已備註一位不吃牛，現場再向導遊提醒一次。</div>
+        </div>
+        <div class="item">
+          <div class="item-time">下午・返程</div>
+          <div class="item-main"><strong>長安乘竹筏遊船</strong>（穿越石灰岩洞穴）→ 16:30 返回河內</div>
+          <div class="item-note">乘船務必穿妥救生衣；約 19:30–20:00 回到還劍區，整理行李準備早班機。</div>
+        </div>
+      </div>
+
+      <!-- Day 5 -->
+      <div id="day5" class="day-card card" style="display:none;">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Day 5｜早班機平安返台</div>
+            <div style="font-size:13px; color:#6B7280;">07:45 前退房 → 08:00 專車送機 → 11:45 起飛</div>
+          </div>
+          <div class="weather-pill">21–26°C 有陣雨</div>
+        </div>
+        <div class="item">
+          <div class="item-time">07:45 前</div>
+          <div class="item-main">完成飯店退房</div>
+          <div class="item-note">留意托運行李額度：去程每人 23kg，回程 VJ946 <strong>僅兩人共用 1 件 20kg 托運</strong>＋每人 7kg 手提。</div>
+        </div>
+        <div class="item">
+          <div class="item-time">08:00</div>
+          <div class="item-main">飯店外搭送機專車前往內排機場 (HAN)</div>
+          <div class="item-note">下雨注意行李防水。</div>
+        </div>
+        <div class="item">
+          <div class="item-time">11:45–15:15</div>
+          <div class="item-main">河內起飛 (VJ946) → 抵達高雄小港機場 → 返回台南善化</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: 換匯・小費・Grab -->
+    <div id="tab-money" class="tab-panel">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">越盾 ↔ 台幣快速換算</div>
+          <div class="weather-pill">1 TWD ≈ 782 VND</div>
+        </div>
+        <div class="conv-box">
+          <div>
+            <label for="vnd-in">越南盾 (VND)</label>
+            <input id="vnd-in" type="number" inputmode="numeric" placeholder="例如 100000" oninput="calcFromVnd()" />
+          </div>
+          <div>
+            <label for="twd-in">新台幣 (TWD 約)</label>
+            <input id="twd-in" type="number" inputmode="numeric" placeholder="例如 1000" oninput="calcFromTwd()" />
+          </div>
+        </div>
+        <div style="font-size:12.5px; color:#6B7280;">快速心算：去掉 3 個零 × 1.28 ≈ 台幣（例如 100,000 VND ≈ NT$128）。</div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">換匯所順位＆付款備忘</div>
+        </div>
+        <ul class="list-ul">
+          <li><strong>1. Giang Son Gemstone Jewelry</strong>（主選・Hàng Bạc 銀街）</li>
+          <li><strong>2. Hanoi currency</strong>（備案）</li>
+          <li><strong>3. Công ty vàng bạc Quốc Trinh</strong>（備案・Hà Trung 街）</li>
+          <li><strong>飯店付款</strong>：H Hôtel L'Art 四晚房費 <strong>9,314,880 VND</strong>，付現最省（刷卡加收 5%）。</li>
+          <li><strong>大鈔防看錯</strong>：500,000（藍紫）與 20,000（藍）、100,000（綠）與 10,000（黃棕）色系相近，付鈔前數清零的個數。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">小費規則（全部為自願性質）</div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>對象</th><th>建議額（兩人合計）</th></tr></thead>
+            <tbody>
+              <tr><td>一日團導遊</td><td class="num">100,000–200,000 VND / 天</td></tr>
+              <tr><td>一日團司機</td><td class="num">50,000–100,000 VND / 天</td></tr>
+              <tr><td>長安／魯恩洞船伕</td><td class="num">30,000–50,000 VND / 次</td></tr>
+              <tr><td>餐廳／咖啡</td><td class="num">一般免給（滿意留 1–2 萬）</td></tr>
+              <tr><td>Grab／接送／房務</td><td class="num">0–50,000 VND（有幫忙搬行李再給）</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">GrabCar 均價參考（4 人座整車）</div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>路段</th><th>單程區間</th></tr></thead>
+            <tbody>
+              <tr><td>老城區短程（1.2–1.6 km）</td><td class="num">35,000–65,000 VND</td></tr>
+              <tr><td>市區跨區（如飯店↔昇龍皇城）</td><td class="num">40,000–80,000 VND</td></tr>
+              <tr><td>法國區／歌劇院周邊（約 3 km）</td><td class="num">50,000–85,000 VND</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: 避牛・用詞 -->
+    <div id="tab-phrases" class="tab-panel">
+      <div class="no-beef-card">
+        <div class="nb-label">點餐直接拿給店員看（我不吃牛肉／請勿用牛骨湯底）</div>
+        <div class="nb-vn">Tôi không ăn thịt bò.<br>(Không nước dùng bò)</div>
+        <div class="nb-sub">諧音：都伊 空 安 踢特 薄｜這道有牛肉嗎？：Món này có thịt bò không?</div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><div class="card-title">常用旅遊會話</div></div>
+        <div class="phrase-grid">
+          <div class="phrase-box"><div class="p-zh">你好 ／ 謝謝</div><div class="p-vn">Xin chào ／ Cảm ơn</div><div class="p-pron">新早 ／ 感恩</div></div>
+          <div class="phrase-box"><div class="p-zh">請問多少錢？</div><div class="p-vn">Bao nhiêu tiền?</div><div class="p-pron">包紐 田？</div></div>
+          <div class="phrase-box"><div class="p-zh">結帳／買單</div><div class="p-vn">Tính tiền</div><div class="p-pron">丁 田</div></div>
+          <div class="phrase-box"><div class="p-zh">少冰 ／ 不要冰</div><div class="p-vn">Ít đá ／ Không đá</div><div class="p-pron">一 達 ／ 空 達</div></div>
+          <div class="phrase-box"><div class="p-zh">不要香菜 ／ 不要辣</div><div class="p-vn">Không rau mùi ／ Không cay</div><div class="p-pron">空 召 梅 ／ 空 該</div></div>
+          <div class="phrase-box"><div class="p-zh">洗手間在哪裡？</div><div class="p-vn">Nhà vệ sinh ở đâu?</div><div class="p-pron">亞 維 辛 俄 兜？</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><div class="card-title">菜單關鍵字速認</div></div>
+        <ul class="list-ul">
+          <li><strong style="color:#BE123C;">Bò</strong> = 牛肉（⚠️ 避開）</li>
+          <li><strong>Gà</strong> = 雞肉 ｜ <strong>Heo / Lợn</strong> = 豬肉</li>
+          <li><strong>Tôm</strong> = 蝦子 ｜ <strong>Cá</strong> = 魚肉 ｜ <strong>Hải sản</strong> = 海鮮</li>
+          <li><strong>Chay</strong> = 素食 ｜ <strong>Phở</strong> = 河粉 ｜ <strong>Bún</strong> = 米線</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TAB 4: 住宿・回顧 -->
+    <div id="tab-info" class="tab-panel">
+      <div class="card">
+        <div class="card-header"><div class="card-title">住宿與機場接送</div></div>
+        <ul class="list-ul">
+          <li><strong>H Hôtel L'Art Hanoi</strong>（74 Phố Hàng Gà, Hoàn Kiếm）：含早餐；14:00 入住／12:00 前退房。</li>
+          <li><strong>11/24 送機</strong>：<strong>08:00</strong> 飯店外上車（07:45 前完成退房）。</li>
+          <li><strong>接送客服</strong>：電話 +1 800 814 4204 ／ WhatsApp +1 914 604 3739。</li>
+        </ul>
+        <div class="map-links" style="margin-top:10px;">
+          <a class="map-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=H+Hotel+L'Art+Hanoi+74+Hang+Ga+Hoan+Kiem+Hanoi">📍 開啟飯店地圖</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><div class="card-title">航班資訊</div></div>
+        <ul class="list-ul">
+          <li><strong>去程 11/20</strong>：CI9587 (VN587)｜08:40 高雄 → 10:30 河內（每人 1 件 23kg 托運）</li>
+          <li><strong>回程 11/24</strong>：VJ946｜11:45 河內 → 15:15 高雄（手提 7kg ＋ <strong>兩人共用 1 件 20kg 托運</strong>）</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">旅後回顧與實際紀錄</div>
+          <span class="tag tag-blue">持續累積</span>
+        </div>
+        <ul class="list-ul">
+          <li><strong>Day 1（11/20 實際）</strong>：已於老城區完成換匯、享用雞肉河粉、Loading T Café 蛋咖啡、散步還劍湖與夜市，晚餐吃烤肉米線。</li>
+          <li><strong>Day 2～Day 5</strong>：旅後將依實際造訪感受與照片重點持續補充至此，作為完整旅遊回顧存檔。</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    2026 河內・夏龍灣・寧平旅行手冊｜最後更新：2026/11/21｜不含護照與訂位機密編號
+  </footer>
+
+  <script>
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + tabId).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    function switchDay(dayId, pill) {
+      document.querySelectorAll('.day-card').forEach(c => c.style.display = 'none');
+      document.querySelectorAll('.day-pill').forEach(p => p.classList.remove('active'));
+      document.getElementById(dayId).style.display = 'block';
+      pill.classList.add('active');
+    }
+
+    function calcFromVnd() {
+      const vnd = parseFloat(document.getElementById('vnd-in').value);
+      document.getElementById('twd-in').value = isNaN(vnd) ? '' : Math.round(vnd / 782);
+    }
+
+    function calcFromTwd() {
+      const twd = parseFloat(document.getElementById('twd-in').value);
+      document.getElementById('vnd-in').value = isNaN(twd) ? '' : Math.round(twd * 782);
+    }
+
+    // Auto-select today's day tab if within 11/20 - 11/24
+    (function initToday() {
+      const d = new Date();
+      const m = d.getMonth() + 1;
+      const day = d.getDate();
+      let target = 'day2';
+      if (m === 11 && day === 20) target = 'day1';
+      else if (m === 11 && day === 21) target = 'day2';
+      else if (m === 11 && day === 22) target = 'day3';
+      else if (m === 11 && day === 23) target = 'day4';
+      else if (m === 11 && day === 24) target = 'day5';
+      const pill = document.querySelector(`.day-pill[data-day="${target}"]`);
+      if (pill) switchDay(target, pill);
+    })();
+  </script>
+</body>
+</html>
